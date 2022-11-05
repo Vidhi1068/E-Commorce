@@ -1,0 +1,80 @@
+.maindiv {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card1 {
+  width: 18rem;
+  background-color: darkcyan;
+  background-image: linear-gradient(
+    to right top,
+    #3ea661,
+    #00a58c,
+    #009fad,
+    #1796bb,
+    #618bb7
+  );
+  margin: 90px 0px;
+}
+
+.card2 {
+  width: 18rem;
+
+  background-color: lavender;
+
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+
+  margin: 90px 0px;
+}
+
+.card3 {
+  width: 18rem;
+  background: rgb(45, 224, 150);
+  background: radial-gradient(
+    circle,
+    rgba(45, 224, 150, 0.9836309523809523) 23%,
+    rgba(233, 229, 148, 1) 100%
+  );
+  margin: 90px 0px;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+  color: var(--bs-card-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-img1-top,
+.card-img2-top,
+.card-img3-top {
+  height: 284px;
+  border-radius: 112px;
+}
+
+.card1-title {
+  margin-bottom: var(--bs-card-title-spacer-y);
+  font-style: italic;
+  font-family: -webkit-body;
+  color: chartreuse;
+}
+
+.card1-p {
+  font-size: larger;
+  color: cornsilk;
+  font-style: italic;
+  text-shadow: 1px 1px aquamarine;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  transition: all 0.5s ease-in-out;
+}

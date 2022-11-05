@@ -1,0 +1,54 @@
+body {
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+}
+
+.navstyle {
+  background: rgb(31, 32, 32);
+  background: radial-gradient(
+    circle,
+    rgba(31, 32, 32, 0.9836309523809523) 19%,
+    rgba(156, 148, 233, 1) 100%
+  );
+  box-shadow: 1px 1px 22px 5px darkslateblue;
+}
+svg {
+  width: 35px;
+  border-radius: 10px;
+  background-color: #f0f1ff;
+}
+/* .purple
+{
+    background: #b8a4d4;
+} */
+
+.navbar-light .navbar-brand {
+  font-family: ui-monospace;
+  color: azure;
+  text-shadow: 1px 1px mediumaquamarine;
+}
+
+.container {
+  width: 70%;
+  height: 504px;
+  margin-top: 73px;
+  box-shadow: 1px 13px 20px 1px black;
+  background-color: #000000a1;
+  /* display: none; */
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+svg:hover {
+  display: block;
+}
