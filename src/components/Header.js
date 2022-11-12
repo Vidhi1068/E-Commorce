@@ -1,12 +1,11 @@
 import React from "react";
 import "./Header.css";
 import Cart from "../components/Cart";
-import Card from "./Card";
 import { useState } from "react";
-import { useStateContext } from "../contexts/ContextProvider";
 import CartProducts from "./CartProducts";
 
-export default function Header({ handleClick }) {
+
+export default function Header() {
   const [show, setShow] = useState(false);
 
   const click = () => {
@@ -23,8 +22,10 @@ export default function Header({ handleClick }) {
           <Cart handleClick={() => click()} />
         </div>
       </nav>
-
+   
       <CartProducts show={show} />
+
+     
     </div>
   );
 }

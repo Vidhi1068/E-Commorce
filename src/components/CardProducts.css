@@ -1,0 +1,21 @@
+.listimg {
+  vertical-align: middle;
+  height: 74px;
+  border-radius: 22px;
+}
+.listiteam{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.contentsetting{
+  
+    margin: 0px 25px;
+}
+
+
+
+
+
+

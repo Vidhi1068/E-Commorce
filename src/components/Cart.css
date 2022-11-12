@@ -1,41 +1,20 @@
 
 
 
-.cart_item1 {
+/* .cart_item1 ,.cart_item2 ,.cart_item3{
   display: flex;
   align-items: center;
   align-content: stretch;
 }
 
-.cart_item2 {
-  display: flex;
-  align-items: center;
-  align-content: stretch;
-}
 
-.cart_item3 {
-  display: flex;
-  align-items: center;
-  align-content: stretch;
-}
-
-.cart_data1 {
+.cart_data1 ,.cart_data2,.cart_data3{
   margin: 0px 68px;
   font-style: italic;
   color: cornsilk;
-}
+} */
 
-.cart_data2 {
-  margin: 0px 68px;
-  font-style: italic;
-  color: cornsilk;
-}
 
-.cart_data3 {
-  margin: 0px 68px;
-  font-style: italic;
-  color: cornsilk;
-}
 .batton {
   position: absolute;
   top: 0px;

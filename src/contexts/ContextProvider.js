@@ -1,9 +1,12 @@
 import React, { createContext, useContext, useState } from "react";
+import CartProducts from "../components/CartProducts";
 const StateContext = createContext();
 
 export const ContextProvider = ({ children }) => {
   const [inc, setInc] = useState(0);
+  const [itemAmount, setItemAmount] = useState(1);
   const [onlyCartProducts, setOnlyCartProduct] = useState([])
+ 
 
   const Allproducts = [
     {
@@ -12,7 +15,7 @@ export const ContextProvider = ({ children }) => {
       discription: "The Coolest Therapiest",
       price: "$10",
       img: "/assets/images/boat1.jpg",
-      amount: 1,
+     
     },
 
     {
@@ -21,7 +24,7 @@ export const ContextProvider = ({ children }) => {
       discription: "Listen to your heart",
       price: "$20",
       img: "/assets/images/boat2.jpg",
-      amount: 1,
+      
     },
 
     {
@@ -30,9 +33,12 @@ export const ContextProvider = ({ children }) => {
       discription: "Enter into your own World",
       price: "$30",
       img: "/assets/images/boat3.jpg",
-      amount: 1,
+      
     },
+
   ];
+
+   
 
   return (
     <>
@@ -43,9 +49,13 @@ export const ContextProvider = ({ children }) => {
           setInc,
           onlyCartProducts,
           setOnlyCartProduct,
+          itemAmount,
+          setItemAmount,
         }}
       >
         {children}
+
+        <CartProducts id={Allproducts.id} />
       </StateContext.Provider>
     </>
   );

@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Cart.css";
 import { useStateContext} from "../contexts/ContextProvider";
 
 
 export default function Cart({handleClick}) {
 
-  //import state variable from contexts
+  //import state variable from contexts    
   const { inc} = useStateContext();
 
   return (
@@ -26,7 +26,7 @@ export default function Cart({handleClick}) {
       </svg>
       <div className="batton">{inc}</div>
       
-      {/* <div className="cart_item1">
+      {/* <div className="  ">
         <div className="cart_img">
           <img
             src="/assets/images/boat1.jpg"
