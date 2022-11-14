@@ -3,24 +3,49 @@ import { useStateContext } from "../contexts/ContextProvider";
 import "./CardProducts.css";
 
 const CartProducts = ({ show }) => {
-  const { onlyCartProducts, setOnlyCartProduct, itemAmount, setItemAmount } =
-    useStateContext();
+  const {
+    onlyCartProducts,
+    setOnlyCartProduct,
+    itemAmount,
+    setItemAmount,
+    setInc,
+  } = useStateContext();
   console.log("from new cmp ---> ", onlyCartProducts);
 
-  const Increasing = () => {
-    setItemAmount(itemAmount + 1);
+  const Increasing = (el) => {
+    const copyArr = [...onlyCartProducts];
+    let count = el?.count || 1;
 
-    // const incrise=onlyCartProducts.filter((eleitem)=>eleitem.id === el.id ? eleitem.itemAmount += value : eleitem);
-    //  setItemAmount(incrise);
+    let y = {
+      ...el,
+      count: count + 1,
+    };
+
+    const ind = copyArr.findIndex((itm) => itm.id === el.id);
+    copyArr[ind] = y;
+    setOnlyCartProduct(copyArr);
   };
 
-  const Decreasing = () => {
+  const Decreasing = (el) => {
     console.log("desc --> ", itemAmount);
-    if (itemAmount > 0 && itemAmount !== 0) {
-      setItemAmount(itemAmount - 1);
-    } else {
-      setItemAmount(itemAmount);
-    }
+
+    const copyArr = [...onlyCartProducts];
+    let count = el?.count || 1;
+
+    let y = {
+      ...el,
+      count: count - 1,
+    };
+
+    const ind = copyArr.findIndex((itm) => itm.id === el.id);
+    copyArr[ind] = y;
+    setOnlyCartProduct(copyArr);
+
+    // if (itemAmount > 0 && itemAmount !== 0) {
+    //   setItemAmount(itemAmount - 1);
+    // } else {
+    //   setItemAmount(itemAmount);
+    // }
   };
 
   const onDelete = (el) => {
@@ -34,11 +59,13 @@ const CartProducts = ({ show }) => {
 
   const OnClearcart = () => {
     setOnlyCartProduct([]);
+    setInc(0)
   };
   return (
     <div className={`container  ${show ? "show" : "hide"} `}>
       {onlyCartProducts.length === 0 && (
-        <div className="emptycart"
+        <div
+          className="emptycart"
           style={{
             color: "blue",
             fontSize: "20px",
@@ -52,9 +79,7 @@ const CartProducts = ({ show }) => {
             fontFamily: "serif",
             fontStyle: "italic",
             borderRadius: "11px",
-            padding:"15px",
-           
-            
+            padding: "15px",
           }}
         >
           Cart is Empty !!
@@ -93,14 +118,14 @@ const CartProducts = ({ show }) => {
                   </button>
 
                   <button type="button" class="btn btn-success">
-                    {itemAmount}
+                    {el?.count || 1}
                   </button>
 
                   <button
                     type="button"
-                    disabled={itemAmount === 1}
+                    disabled={el?.count === 1}
                     class="btn btn-sm btn-info"
-                    onClick={() => Decreasing()}
+                    onClick={() => Decreasing(el)}
                   >
                     -
                   </button>

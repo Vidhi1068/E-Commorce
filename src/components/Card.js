@@ -7,7 +7,7 @@ export default function Card() {
 
   const onhandleClick = (item) => {
     setInc(inc + 1);
-    setOnlyCartProduct((oldItems) => [...oldItems, item]);
+    setOnlyCartProduct((oldItems) => [...oldItems, { ...item, totalItem : inc + 1}]);
     console.log("vidhi", item);
   };
 
